@@ -59,6 +59,12 @@
                         userVisibleOnly: true,
                         applicationServerKey: urlBase64ToUint8Array(publicVapidKey)
                     });
+                    // 4. Send Subscription to Backend
+                    await fetch('https://score-server-58ri.onrender.com/subscribe', {
+                        method: 'POST',
+                        body: JSON.stringify(subscription),
+                        headers: { 'content-type': 'application/json' }
+                    });
 
                     // (Eventually, this will send the sub to your Node.js backend)
                     console.log('Push subscribed successfully', subscription);
