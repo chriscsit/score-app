@@ -100,7 +100,7 @@
                 const data = await response.json();
                 renderMatches(data.matches);
             } catch (error) {
-                document.getElementById('matches').innerText = 'Matches will appear here once you add an API key.';
+                document.getElementById('matches').innerText = 'Matches will appear here once you add an API key.' + error.message;
             }
         }
 
