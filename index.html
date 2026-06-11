@@ -72,7 +72,8 @@
                     
                 } catch (err) {
                     console.error('Push subscription failed:', err);
-                    alert("Could not enable alerts. Make sure you are using the app from your Home Screen, not Safari.");
+                    alert(err);
+                    //alert("Could not enable alerts. Make sure you are using the app from your Home Screen, not Safari.");
                 }
             } else {
                 alert("Push notifications are not supported on this browser version.");
