@@ -1,0 +1,7 @@
+{
+  "name": "Match Tracker",
+  "short_name": "Scores",
+  "display": "standalone",
+  "start_url": "/score-app/",
+  "background_color": "#121212"
+}
