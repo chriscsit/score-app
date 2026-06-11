@@ -46,6 +46,7 @@
             }
             return outputArray;
         }
+        
 
         async function subscribeToPush() {
             if ('serviceWorker' in navigator && 'PushManager' in window) {
@@ -55,7 +56,9 @@
 
                     const register = await navigator.serviceWorker.register('/score-app/sw.js');
                     
-                    const subscription = await register.pushManager.subscribe({
+                    const swRegistration = await navigator.serviceWorker.ready;
+                    
+                    const subscription = await swRegistration.pushManager.subscribe({
                         userVisibleOnly: true,
                         applicationServerKey: urlBase64ToUint8Array(publicVapidKey)
                     });
